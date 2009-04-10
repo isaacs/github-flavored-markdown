@@ -3,9 +3,6 @@ title: Introduction
 layout: default
 ---
 
-GitHub Flavored Markdown
-========================
-
 GitHub is transitioning to what we're calling "GitHub Flavored Markdown" (GFM) for messages, issues, and comments. It differs from standard Markdown (SM)
 in a few significant ways and adds some additional functionality.
 
