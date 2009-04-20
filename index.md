@@ -3,8 +3,7 @@ title: Introduction
 layout: default
 ---
 
-GitHub is transitioning to what we're calling "GitHub Flavored Markdown" (GFM) for messages, issues, and comments. It differs from standard Markdown (SM)
-in a few significant ways and adds some additional functionality.
+GitHub uses what we're calling "GitHub Flavored Markdown" (GFM) for messages, issues, and comments. It differs from standard Markdown (SM) in a few significant ways and adds some additional functionality.
 
 If you're not already familiar with Markdown, you should spend 15 minutes and go over the excellent [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) at Daring Fireball.
 
@@ -41,6 +40,10 @@ becomes
 
 perform\_complicated\_task  
 do\_this\_and\_do\_that\_and\_another\_thing
+
+### URL autolinking
+
+GFM will autolink standard URLs, so if you want to link to a URL (instead of setting link text), you can simply enter the URL and it will be turned into a link to that URL.
 
 A bit of the GitHub spice
 -------------------------
