@@ -64,3 +64,10 @@ becomes
 <li>User/#Num: <a href="/mojombo/github-flavored-markdown/issues/#issue/1">mojombo#1</a></li>
 <li>User/Project#Num: <a href="/mojombo/god/issues/#issue/1">mojombo/god#1</a></li>
 </ul>
+
+Code
+----
+
+The newline and underscore modification code can be seen below. If you find a bug in the rendering, we'd love to hear about it.
+
+<script src="http://gist.github.com/96747.js"></script>
