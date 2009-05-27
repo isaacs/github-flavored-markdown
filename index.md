@@ -73,4 +73,4 @@ Code
 
 The newline and underscore modification code can be seen below. If you find a bug in the rendering, we'd love to hear about it.
 
-<script src="http://gist.github.com/96747.js"></script>
+<script src="http://gist.github.com/118964.js"></script>

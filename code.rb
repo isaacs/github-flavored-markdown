@@ -31,7 +31,8 @@ if $0 == __FILE__
       end
 
       should "convert newlines in all groups" do
-        assert_equal "apple  \npear  \norange\n\nruby  \npython  \nerlang", gfm("apple\npear\norange\n\nruby\npython\nerlang")
+        assert_equal "apple  \npear  \norange\n\nruby  \npython  \nerlang",
+                     gfm("apple\npear\norange\n\nruby\npython\nerlang")
       end
 
       should "not convert newlines in lists" do
