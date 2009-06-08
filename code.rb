@@ -1,4 +1,14 @@
+require 'digest/md5'
+
 def gfm(text)
+  # Extract pre blocks
+  extractions = {}
+  text.gsub!(%r{<pre>.*?</pre>}m) do |match|
+    md5 = Digest::MD5.hexdigest(match)
+    extractions[md5] = match
+    "{gfm-extraction-#{md5}}"
+  end
+
   # prevent foo_bar_baz from ending up with an italic word in the middle
   text.gsub!(/(^(?! {4}|\t)\w+_\w+_\w[\w_]*)/) do |x|
     x.gsub('_', '\_') if x.split('').sort.to_s[0..1] == '__'
@@ -7,6 +17,11 @@ def gfm(text)
   # in very clear cases, let newlines become <br /> tags
   text.gsub!(/(\A|^$\n)(^\w[^\n]*\n)(^\w[^\n]*$)+/m) do |x|
     x.gsub(/^(.+)$/, "\\1  ")
+  end
+
+  # Insert pre block extractions
+  text.gsub!(/\{gfm-extraction-([0-9a-f]{32})\}/) do
+    extractions[$1]
   end
 
   text
@@ -20,6 +35,14 @@ if $0 == __FILE__
     context "GFM" do
       should "not touch single underscores inside words" do
         assert_equal "foo_bar", gfm("foo_bar")
+      end
+
+      should "not touch underscores in code blocks" do
+        assert_equal "    foo_bar_baz", gfm("    foo_bar_baz")
+      end
+
+      should "not touch underscores in pre blocks" do
+        assert_equal "<pre>\nfoo_bar_baz\n</pre>", gfm("<pre>\nfoo_bar_baz\n</pre>")
       end
 
       should "escape two or more underscores inside words" do
