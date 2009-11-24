@@ -61,6 +61,13 @@
 //
 
 
+// **************************************************
+// GitHub Flavored Markdown modifications by Tekkub
+// http://github.github.com/github-flavored-markdown/
+//
+// Modifications are tagged with "GFM"
+// **************************************************
+
 //
 // Showdown namespace
 //
@@ -1062,6 +1069,7 @@ var _FormParagraphs = function(text) {
 		}
 		else if (str.search(/\S/) >= 0) {
 			str = _RunSpanGamut(str);
+			str = str.replace(/\n/g,"<br />");  // ** GFM **
 			str = str.replace(/^([ \t]*)/g,"<p>");
 			str += "</p>"
 			grafsOut.push(str);
