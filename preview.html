@@ -3,34 +3,6 @@ title: Live Preview
 layout: default
 ---
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<script type="text/javascript" src="/showdown.js"></script>
-<script>
-  $(function() {
-    var converter = new Showdown.converter();
-    $("#user_input").keyup(function(){
-      var txt = $("#user_input").val();
-      var html = converter.makeHtml(txt);
-      $("#result").html(html)
-    });
-  });
-</script>
-
-<style>
-  #user_input {
-    width: 600px;
-    height: 170px;
-    margin-top: 15px;
-  }
-  #result {
-    width: 580px;
-    min-height: 150px;
-    border: 1px solid black;
-    margin-top: 15px;
-    padding: 10px;
-  }
-</style>
-
 <p>This page provides a live GFM preview, rendered client-side using javascript.
   The majority of the credit goes to the wonderful <a href="http://attacklab.net/showdown/">Showdown</a> script, which handles the meat of the processing.
   GFM modifications for newlines and underscore-words were added.  "GitHub spice" syntaxes have not yet been implemented.
