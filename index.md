@@ -12,6 +12,8 @@ If you prefer to learn by example, see the following source and result:
 * [Source](sample_content.html)
 * [Result](http://github.com/mojombo/github-flavored-markdown/issues/#issue/1)
 
+You can also use our [live javascript preview](/preview.html) to see GFM in action.
+
 Differences from traditional Markdown
 -------------------------------------
 
