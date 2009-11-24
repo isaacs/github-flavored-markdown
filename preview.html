@@ -20,6 +20,7 @@ layout: default
   #user_input {
     width: 600px;
     height: 170px;
+    margin-top: 15px;
   }
   #result {
     width: 580px;
@@ -30,7 +31,14 @@ layout: default
   }
 </style>
 
+<p>This page provides a live GFM preview, rendered client-side using javascript.
+  The majority of the credit goes to the wonderful <a href="http://attacklab.net/showdown/">Showdown</a> script, which handles the meat of the processing.
+  GFM modifications for newlines and underscore-words were added.  "GitHub spice" syntaxes have not yet been implemented.
+</p>
+
+<h2>User input</h2>
+
 <textarea id="user_input">Type markdown here...</textarea>
 
-<h3> Live preview </h3>
+<h2> Live preview </h2>
 <div id="result">... and get formatted output here</div>
