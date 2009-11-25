@@ -154,8 +154,9 @@ this.makeHtml = function(text) {
 	// attacklab: Restore tildes
 	text = text.replace(/~T/g,"~");
 
-  // ** GFM **  Auto-link URLs
+  // ** GFM **  Auto-link URLs and emails
   text = text.replace(/https?\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!]/g, function(wholeMatch){return "<a href='" + wholeMatch + "'>" + wholeMatch + "</a>";});
+  text = text.replace(/[a-z0-9_\-+=.]+@[a-z0-9\-]+(\.[a-z0-9-]+)+/ig, function(wholeMatch){return "<a href='mailto:" + wholeMatch + "'>" + wholeMatch + "</a>";});
 
 	return text;
 }
