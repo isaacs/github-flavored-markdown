@@ -5,7 +5,7 @@ layout: default
 
 This page provides a live GFM preview, rendered client-side using javascript.
 The majority of the credit goes to the wonderful [Showdown](http://attacklab.net/showdown/) script, which handles the meat of the processing.
-GFM modifications for newlines and underscore-words were added.  Automatic linking and "GitHub spice" syntaxes have not yet been implemented.
+GFM modifications for newlines, underscore-words, autolinking and GitHub SHA1/issue link syntaxes were added.
 
 User input
 ----------
