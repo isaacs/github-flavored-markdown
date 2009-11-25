@@ -10,9 +10,9 @@ GFM modifications for newlines and underscore-words were added.  Automatic linki
 User input
 ----------
 
-<textarea id="user_input">Type markdown here...</textarea>
+<textarea id="user_input"></textarea>
 
 Live preview
 ------------
 
-<div id="result"><p>... and get formatted output here</p></div>
+<div id="result"></div>
