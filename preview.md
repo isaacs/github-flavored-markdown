@@ -10,6 +10,11 @@ GFM modifications for newlines and underscore-words were added.  Automatic linki
 User input
 ----------
 
+<script type="text/javascript">
+  var GitHub = {}
+  GitHub.nameWithOwner = "mojombo/god";
+</script>
+
 <textarea id="user_input"></textarea>
 
 Live preview
