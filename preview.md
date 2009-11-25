@@ -16,3 +16,7 @@ Live preview
 ------------
 
 <div id="result"></div>
+
+### HTML
+
+<textarea id="html_result"></textarea>
