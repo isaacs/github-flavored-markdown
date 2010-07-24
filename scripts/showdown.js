@@ -155,29 +155,26 @@ this.makeHtml = function(text) {
 	text = text.replace(/~T/g,"~");
 
   // ** GFM **  Auto-link URLs and emails
-  text = text.replace(/https?\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!]/g, function(wholeMatch){
-    var left = RegExp.leftContext
-    var right = RegExp.rightContext
+  text = text.replace(/https?\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!]/g, function(wholeMatch,matchIndex){
+    var left = text.slice(0, matchIndex), right = text.slice(matchIndex)
     if (left.match(/<[^>]+$/) && right.match(/^[^>]*>/)) {return wholeMatch}
     return "<a href='" + wholeMatch + "'>" + wholeMatch + "</a>";
   });
   text = text.replace(/[a-z0-9_\-+=.]+@[a-z0-9\-]+(\.[a-z0-9-]+)+/ig, function(wholeMatch){return "<a href='mailto:" + wholeMatch + "'>" + wholeMatch + "</a>";});
 
   // ** GFM ** Auto-link sha1 if GitHub.nameWithOwner is defined
-  text = text.replace(/[a-f0-9]{40}/ig, function(wholeMatch){
+  text = text.replace(/[a-f0-9]{40}/ig, function(wholeMatch,matchIndex){
     if (typeof(GitHub) == "undefined" || typeof(GitHub.nameWithOwner) == "undefined") {return wholeMatch;}
-    var left = RegExp.leftContext
-    var right = RegExp.rightContext
+    var left = text.slice(0, matchIndex), right = text.slice(matchIndex)
     if (left.match(/@$/) || (left.match(/<[^>]+$/) && right.match(/^[^>]*>/))) {return wholeMatch;}
     return "<a href='http://github.com/" + GitHub.nameWithOwner + "/commit/" + wholeMatch + "'>" + wholeMatch.substring(0,7) + "</a>";
   });
 
   // ** GFM ** Auto-link user@sha1 if GitHub.nameWithOwner is defined
-  text = text.replace(/([a-z0-9_\-+=.]+)@([a-f0-9]{40})/ig, function(wholeMatch,username,sha){
+  text = text.replace(/([a-z0-9_\-+=.]+)@([a-f0-9]{40})/ig, function(wholeMatch,username,sha,matchIndex){
     if (typeof(GitHub) == "undefined" || typeof(GitHub.nameWithOwner) == "undefined") {return wholeMatch;}
     GitHub.repoName = GitHub.repoName || _GetRepoName()
-    var left = RegExp.leftContext
-    var right = RegExp.rightContext
+    var left = text.slice(0, matchIndex), right = text.slice(matchIndex)
     if (left.match(/\/$/) || (left.match(/<[^>]+$/) && right.match(/^[^>]*>/))) {return wholeMatch;}
     return "<a href='http://github.com/" + username + "/" + GitHub.repoName + "/commit/" + sha + "'>" + username + "@" + sha.substring(0,7) + "</a>";
   });
