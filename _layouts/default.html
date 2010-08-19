@@ -14,15 +14,16 @@
   </head>
   <body>
     <div id="main">
-      <div id="header" class="basic">
+      <div id="header" class="basic" style="margin-bottom:20px">
         <div class="site">
-          <div class="logo">
+          <div class="logo boring">
             <a href="http://github.github.com/github-flavored-markdown/"><img src="images/gfm.png" alt="github flavored markdown" /></a>
           </div>
-          <div class="actions">
-            <a href="http://github.com">home</a>
-            <a href="http://github.com/login">login</a>
-            <a href="http://github.com/signup">signup!</a>
+          <div class="topsearch">
+            <ul class="nav logged_out" style="margin-top:20px">
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -40,25 +41,23 @@
 
     <div id="footer">
       <div class="site">
-
         <div class="info">
           <div class="links">
-            <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-            <a href="http://github.com/blog">Blog</a> |
+            <a href="http://github.com/blog"><b>Blog</b></a> |
             <a href="http://support.github.com/">Support</a> |
-            <a href="http://github.com/training">Git Training</a> |
+            <a href="http://github.com/training">Training</a> |
             <a href="http://github.com/contact">Contact</a> |
-            <a href="http://groups.google.com/group/github/">Google Group</a> |
-            <a href="http://github.wordpress.com">Status</a>
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://github.com/security">Security</a>
           </div>
           <div class="company">
-            GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
-          </div>
-        </div>
-        <div class="sponsor">
-          <a href="http://engineyard.com"><img src="http://github.com/images/modules/footer/engine_yard_logo.png" alt="Engine Yard" /></a>
-          <div>
-            Hosting provided by our<br /> partners at Engine Yard
+           &copy;
+            {{ site.time | date: "%Y" }}
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy</a>
           </div>
         </div>
       </div>
