@@ -62,12 +62,12 @@ In addition to the changes in the previous section, certain references are auto-
 becomes
 
 <ul>
-<li>SHA: <a href="/mojombo/github-flavored-markdown/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2">be6a8cc</a></li>
-<li>User@SHA ref: <a href="/mojombo/github-flavored-markdown/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2">mojombo@be6a8cc</a></li>
-<li>User/Project@SHA: <a href="/mojombo/god/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2">mojombo/god@be6a8cc</a></li>
-<li>#Num: <a href="/mojombo/github-flavored-markdown/issues/#issue/1" class="internal">#1</a></li>
-<li>User/#Num: <a href="/mojombo/github-flavored-markdown/issues/#issue/1">mojombo#1</a></li>
-<li>User/Project#Num: <a href="/mojombo/god/issues/#issue/1">mojombo/god#1</a></li>
+<li>SHA: <a href="http://github.com/mojombo/github-flavored-markdown/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2">be6a8cc</a></li>
+<li>User@SHA ref: <a href="http://github.com/mojombo/github-flavored-markdown/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2">mojombo@be6a8cc</a></li>
+<li>User/Project@SHA: <a href="http://github.com/mojombo/god/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2">mojombo/god@be6a8cc</a></li>
+<li>#Num: <a href="http://github.com/mojombo/github-flavored-markdown/issues/#issue/1" class="internal">#1</a></li>
+<li>User/#Num: <a href="http://github.com/mojombo/github-flavored-markdown/issues/#issue/1">mojombo#1</a></li>
+<li>User/Project#Num: <a href="http://github.com/mojombo/god/issues/#issue/1">mojombo/god#1</a></li>
 </ul>
 
 Code
