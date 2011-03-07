@@ -68,10 +68,35 @@
 // Modifications are tagged with "GFM"
 // **************************************************
 
+// **************************************************
+// Node.JS port by Isaac Z. Schlueter
+//
+// Modifications are tagged with "isaacs"
+// **************************************************
+
 //
 // Showdown namespace
 //
 var Showdown = {};
+
+//
+// isaacs: export the Showdown object
+//
+if (typeof exports === "object") {
+  Showdown = exports;
+  // isaacs: expose top-level parse() method, like other to-html parsers.
+  Showdown.parse = function (md, gh) {
+    var converter = new Showdown.converter();
+    return converter.makeHtml(md, gh);
+  };
+}
+
+//
+// isaacs: Declare "GitHub" object in here, since Node modules
+// execute in a closure or separate context, rather than right
+// in the global scope.  If in the browser, this does nothing.
+//
+var GitHub;
 
 //
 // converter
@@ -94,8 +119,12 @@ var g_html_blocks;
 // (see _ProcessListItems() for details):
 var g_list_level = 0;
 
+// isaacs - Allow passing in the GitHub object as an argument.
+this.makeHtml = function(text, gh) {
+  if (typeof gh !== "undefined") {
+    GitHub = gh;
+  }
 
-this.makeHtml = function(text) {
 //
 // Main function. The order in which other subs are called here is
 // essential. Link and image substitutions need to happen before
