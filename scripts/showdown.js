@@ -122,6 +122,7 @@ var g_list_level = 0;
 // isaacs - Allow passing in the GitHub object as an argument.
 this.makeHtml = function(text, gh) {
   if (typeof gh !== "undefined") {
+    if (typeof gh === "string") gh = {nameWithOwner:gh};
     GitHub = gh;
   }
 
