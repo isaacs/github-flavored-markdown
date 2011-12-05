@@ -448,6 +448,7 @@ var _RunBlockGamut = function(text) {
 	text = text.replace(/^[ ]{0,2}([ ]?\_[ ]?){3,}[ \t]*$/gm,key);
 
 	text = _DoLists(text);
+	text = _DoCodeFencing(text);
 	text = _DoCodeBlocks(text);
 	text = _DoBlockQuotes(text);
 
@@ -976,6 +977,28 @@ var _DoCodeBlocks = function(text) {
 	// attacklab: strip sentinel
 	text = text.replace(/~0/,"");
 
+	return text;
+}
+
+//
+// Code Fencing is a GitHub flavored MD concept. Basically you can wrap
+// your code like this:
+// 
+// ```{language}
+// {code}
+// ```
+// 
+// Where {language} is the language of the code (useful for coloring code)
+// and {code} is your code
+// 
+var _DoCodeFencing = function(text) {
+	text = text.replace(/`{3}(?:(.*$)\n)?([\s\S]*?)`{3}/gm,
+		function(wholeMatch,m1,m2){
+			//HTML for this is copied from GitHub directly for compatibility, except the lang="" attribute
+			var codeblock = '<div class="highlight"><pre lang="'+m1+'">'+m2+'</pre></div>';
+			return codeblock;
+		}
+	)
 	return text;
 }
 
