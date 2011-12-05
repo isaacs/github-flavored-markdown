@@ -992,7 +992,7 @@ var _DoCodeBlocks = function(text) {
 // and {code} is your code
 // 
 var _DoCodeFencing = function(text) {
-	text = text.replace(/`{3}(?:(.*$)\n)?([\s\S]*)`{3}/m,
+	text = text.replace(/`{3}(?:(.*$)\n)?([\s\S]*?)`{3}/gm,
 		function(wholeMatch,m1,m2){
 			//HTML for this is copied from GitHub directly for compatibility, except the lang="" attribute
 			var codeblock = '<div class="highlight"><pre lang="'+m1+'">'+m2+'</pre></div>';
