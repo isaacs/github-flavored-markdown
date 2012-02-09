@@ -1,6 +1,6 @@
 {
   "name": "github-flavored-markdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The port of Showdown used on github.com",
   "author": "tekkup (http://tekkub.net/) <git@tekkub.net>",
   "main": "./scripts/showdown.js",
