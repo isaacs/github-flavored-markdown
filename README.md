@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/isaacs/github-flavored-markdown.png)](http://travis-ci.org/isaacs/github-flavored-markdown)
 See:
 [github-flavored-markdown](http://github.github.com/github-flavored-markdown/)
 
