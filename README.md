@@ -1,17 +1,7 @@
-See:
-[github-flavored-markdown](http://github.github.com/github-flavored-markdown/)
+Github has long since abandoned their JavaScript implementation of
+GHM, in favor of doing all rendering on the server.  For a great
+markdown implementation available on npm, use `marked` by @chjj.
 
-As an npm package:
+    npm install marked
 
-    npm install github-flavored-markdown
-
-And then in your node program:
-
-    var ghm = require("github-flavored-markdown")
-    ghm.parse("I **love** GHM.\n\n#2", "isaacs/npm")
-    // returns:
-    // '<p>I <strong>love</strong> GHM.  '+
-    // '<a href=\'http://github.com/isaacs/npm/issues/#issue/2\'>#2</a></p>'
-
-To get the sha/issue/fork links, pass in a second argument specifying
-the current project that things should be relative to.
+Docs: https://github.com/chjj/marked
