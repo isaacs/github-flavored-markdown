@@ -1,3 +1,10 @@
+# THIS MODULE IS DEPRECATED
+
+This module is [deprecated](https://github.com/isaacs/github-flavored-markdown/pull/4#issuecomment-9742952)
+and you should migrate to the [marked](https://github.com/chjj/marked) module.
+
+# OLD README (for historical reference)
+
 See:
 [github-flavored-markdown](http://github.github.com/github-flavored-markdown/)
 
