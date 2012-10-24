@@ -1179,7 +1179,6 @@ var _FormParagraphs = function(text) {
 		}
 		else if (str.search(/\S/) >= 0) {
 			str = _RunSpanGamut(str);
-			str = str.replace(/\n/g,"<br />");  // ** GFM **
 			str = str.replace(/^([ \t]*)/g,"<p>");
 			str += "</p>"
 			grafsOut.push(str);
